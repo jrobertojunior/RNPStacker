@@ -5,7 +5,7 @@ import java.util.Stack;
 import util.Token;
 import util.TokenType;
 
-class RNPStacker {
+class RPNStacker {
 
   public static void main(String[] args) {
     String fileName = "./input.txt";
@@ -41,7 +41,7 @@ class RNPStacker {
               tokens[i] = new Token(TokenType.SLASH, "/");
               break;
             default:
-              System.out.println("Invalid token: " + line);
+              System.out.println("Error: Unexpected character: " + line);
               System.exit(1);
           }
         }
@@ -56,11 +56,11 @@ class RNPStacker {
       Stack<Double> stack = new Stack<Double>();
 
       // print tokens
-      for (String line : lines) {
+      for (Token token : tokens) {
         // if token is a number
-        if (line.matches("[0-9]+")) {
+        if (token.type == TokenType.NUM) {
           // parse token as a float
-          Double num = Double.parseDouble(line);
+          Double num = Double.parseDouble(token.lexeme);
           // add token to stack
           stack.push(num);
         } else {
@@ -68,21 +68,23 @@ class RNPStacker {
           double num1 = stack.pop();
           double num2 = stack.pop();
 
-          switch (line) {
-            case "+":
+          // swtich token type operators
+          switch (token.type) {
+            case PLUS:
               stack.push(num2 + num1);
               break;
-            case "-":
+            case MINUS:
               stack.push(num2 - num1);
               break;
-            case "*":
+            case STAR:
               stack.push(num2 * num1);
               break;
-            case "/":
+            case SLASH:
               stack.push(num2 / num1);
               break;
             default:
-              System.out.println("Invalid operator");
+              System.out.println("Invalid token: " + token);
+              System.exit(1);
           }
         }
       }
