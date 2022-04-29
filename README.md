@@ -11,7 +11,7 @@ $ javac RPNStacker.java
 $ java RPNStacker
 ```
 
-## Exemplo:
+## Exemplo
 
 input.txt:
 ```
