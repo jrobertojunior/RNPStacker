@@ -10,7 +10,7 @@ Escreva a entrada no `input.txt` depois:
 $ javac RPNStacker.java && java RPNStacker
 ```
 
-## Exemplo:
+## Exemplo
 
 input.txt:
 ```
