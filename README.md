@@ -7,8 +7,7 @@ Implementação da **Reverse Polish Notation** (RPN) com pilha para operações 
 Escreva a entrada no `input.txt` depois:
 
 ```
-$ javac RPNStacker.java
-$ java RPNStacker
+$ javac RPNStacker.java && java RPNStacker
 ```
 
 ## Exemplo:
