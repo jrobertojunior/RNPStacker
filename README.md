@@ -14,8 +14,9 @@ $ javac RPNStacker.java && java RPNStacker
 
 input.txt:
 ```
+x:10
 10
-10
+x
 *
 20
 -
@@ -27,8 +28,9 @@ input.txt:
 
 output:
 ```
+Token [type=DEF, lexeme=x]
 Token [type=NUM, lexeme=10.0]
-Token [type=NUM, lexeme=10.0]
+Token [type=VAR, lexeme=x]
 Token [type=STAR, lexeme=*]
 Token [type=NUM, lexeme=20.0]
 Token [type=MINUS, lexeme=-]
